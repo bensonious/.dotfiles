@@ -7,7 +7,7 @@ general {
 }
 
 order += "disk /"
-order += "load"
+order += "cpu_usage"
 order += "memory"
 order += "tztime local"
 
@@ -16,12 +16,12 @@ disk "/" {
         format = "%avail"
 }
 
-load {
-        format = "%1min"
+cpu_usage {
+        format = "%usage"
 }
 
 memory {
-        format = "%used|%available"
+        format = "%used/%available"
         threshold_degraded = "1G"
         format_degraded = "MEMORY < %available"
 }

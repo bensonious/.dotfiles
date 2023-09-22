@@ -3,7 +3,7 @@
 # border & title
 for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
 # class                 border  backgr. text    indicator child_border
-client.focused          #2d2d2d	 #285577 #ffffff #2e9ef4  #808fa0
+client.focused          #2d2d2d	#285577 #ffffff #2e9ef4  #808fa0
 client.focused_inactive #2d2d2d #5f676a #ffffff #484e50   #2d2d2d
 client.unfocused        #2d2d2d #222222 #888888 #292d2e   #2d2d2d
 client.urgent           #9d5b61 #900000 #ffffff #900000   #9d5b61
@@ -16,7 +16,6 @@ gaps outer 0
 # font
 font pango:monospace 11
 
-# mod key used for most binds
 # Mod1 = Alt
 # Mod4 = Super
 set $Mod Mod4
@@ -48,7 +47,7 @@ bindsym Mod1+F4 kill
 bindsym $Mod+w             exec --no-startup-id firefox 
 #bindsym $Mod+f             exec --no-startup-id pcmanfm
 bindsym $Mod+Return        exec --no-startup-id alacritty 
-bindsym $Mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $Mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # logout script
 bindsym $Mod+x exec --no-startup-id rofi_run -l
@@ -65,10 +64,6 @@ bindsym XF86AudioStop        exec --no-startup-id playerctl stop
 bindsym XF86AudioMute        exec --no-startup-id pamixer -t
 bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2
 bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2
-
-# backlight
-bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 ###########          Workspace Bindings          ###############
 
@@ -206,13 +201,13 @@ bar {
 tray_output primary
 position top
  colors {
-        background #2d2d2d
+        background #1C1C27
         statusline #808fa0 #that neon blue
         separator #666666
 #                           border  backgr. text
-        focused_workspace  #808fa0 #808fa0 #ffffff
+	focused_workspace  #272e40 #3e4a6e #BED1FB
         active_workspace   #2d2d2d #2d2d2d #c6c6c6
-        inactive_workspace #2d2d2d #2d2d2d #888888
+	inactive_workspace #1c1c27 #1c1c27 #3e4a6e
         urgent_workspace   #9d5b61 #9d5b61 #c6c6c6
     }
         status_command i3status -c ~/.config/i3status/config
